@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Анимации прокрутки страницы
+
   const animatedElements = document.querySelectorAll('.scroll-animate');
 
   const observer = new IntersectionObserver((entries) => {
@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   animatedElements.forEach(el => observer.observe(el));
 
-  // 2. 3D-Карусель меню
   const track = document.querySelector('.carousel-track');
   const cards = document.querySelectorAll('.carousel-card');
   const prevBtn = document.getElementById('prevBtn');
