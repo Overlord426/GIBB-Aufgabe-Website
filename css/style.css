@@ -1,12 +1,15 @@
-/* Темная палитра с тёмно-голубым оттенком */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Roboto:wght@300;400;500;700&display=swap');
+
+
 :root {
-  --bg-dark: #0d131a;
-  --bg-card: #16222f;
-  --accent-cyan: #38bdf8;
-  --accent-cyan-dark: #1e3a5f;
-  --text-light: #e2e8f0;
-  --text-muted: #94a3b8;
-  --border-color: #243447;
+  --bg-dark: #1E2229;         
+  --bg-card: #282D36;        
+  --accent-wood: #C68B59;    
+  --accent-gold: #D4AF37;    
+  --accent-gold-hover: #b8972e;
+  --text-light: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --border-color: #374151;
 }
 
 * {
@@ -14,7 +17,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-light);
   margin: 0;
@@ -22,12 +25,16 @@ body {
   line-height: 1.6;
 }
 
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
 header {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   padding: 20px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto 20px auto;
   display: flex;
   flex-direction: column;
@@ -42,16 +49,16 @@ header {
 }
 
 h1 {
-  color: var(--accent-cyan);
-  font-size: 28px;
+  color: var(--accent-gold);
+  font-size: 32px;
   margin: 0;
   text-align: center;
-  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+  letter-spacing: 0.5px;
 }
 
 h2 {
-  color: var(--accent-cyan);
-  font-size: 22px;
+  color: var(--accent-wood);
+  font-size: 24px;
   border-bottom: 2px solid var(--border-color);
   padding-bottom: 8px;
   margin-top: 0;
@@ -89,8 +96,8 @@ h2 {
   height: 45px;
   left: 70px;
   top: 7px;
-  background-color: var(--accent-cyan-dark);
-  border: 1px solid var(--accent-cyan);
+  background-color: var(--bg-dark);
+  border: 1px solid var(--accent-wood);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -102,7 +109,7 @@ h2 {
 .carousel-card a {
   color: var(--text-light);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 14px;
   width: 100%;
   height: 100%;
@@ -112,18 +119,19 @@ h2 {
 }
 
 .carousel-card.active {
-  background-color: var(--accent-cyan);
+  background-color: var(--accent-gold);
   border-color: #ffffff;
 }
 
 .carousel-card.active a {
-  color: #0f172a;
+  color: #1E2229;
+  font-weight: 700;
 }
 
 .carousel-btn {
   background: var(--bg-card);
-  border: 1px solid var(--accent-cyan);
-  color: var(--accent-cyan);
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
   font-size: 18px;
   width: 36px;
   height: 36px;
@@ -134,17 +142,16 @@ h2 {
 }
 
 .carousel-btn:hover {
-  background: var(--accent-cyan);
-  color: #0f172a;
+  background: var(--accent-gold);
+  color: #1E2229;
 }
 
-/* --- Основной контент --- */
 main {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
-  padding: 25px;
+  padding: 30px;
   border-radius: 12px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
   box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
@@ -153,28 +160,50 @@ main {
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .hero-img {
   width: 100%;
-  height: 250px;
+  height: 320px;
   object-fit: cover;
   border-radius: 8px;
-  filter: brightness(0.85);
+  filter: brightness(0.75);
 }
 
 .hero-text {
   position: absolute;
   bottom: 0;
-  background: linear-gradient(transparent, rgba(13, 19, 26, 0.95));
+  background: linear-gradient(transparent, rgba(30, 34, 41, 0.95));
   width: 100%;
-  padding: 20px 15px 10px 15px;
+  padding: 25px 20px 20px 20px;
 }
 
 .hero-text h2 {
+  color: var(--accent-gold);
   border: none;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
+  font-size: 28px;
+}
+
+.hero-text p {
+  margin-bottom: 15px;
+}
+
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--accent-gold);
+  color: #1E2229;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--accent-gold-hover);
 }
 
 .content-img {
@@ -190,9 +219,9 @@ main {
 }
 
 .highlight-box {
-  background-color: rgba(56, 189, 248, 0.08);
-  border-left: 4px solid var(--accent-cyan);
-  padding: 15px;
+  background-color: rgba(198, 139, 89, 0.1);
+  border-left: 4px solid var(--accent-wood);
+  padding: 18px;
   margin: 20px 0;
   border-radius: 4px;
 }
@@ -214,15 +243,14 @@ main {
 
 footer {
   text-align: center;
-  margin-top: 30px;
   padding: 15px;
   font-size: 14px;
   color: var(--text-muted);
-  max-width: 800px;
+  max-width: 850px;
   margin: 20px auto 0 auto;
 }
 
-/* --- Анимации появления --- */
+
 .scroll-animate {
   opacity: 0;
   transform: translateY(30px);
